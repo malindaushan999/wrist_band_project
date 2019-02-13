@@ -93,10 +93,14 @@
       <DependentUpon>WristbandModel.edmx</DependentUpon>
       <LastGenOutput>WristbandModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseCommonDataContracts.cs" />
+    <Compile Include="Base\BaseEnums.cs" />
+    <Compile Include="Base\BaseErrors.cs" />
+    <Compile Include="Base\BaseRequestDataContracts.cs" />
+    <Compile Include="Base\BaseResponseDataContracts.cs" />
     <Compile Include="Common\CommonEnums.cs" />
     <Compile Include="Common\CommonErrors.cs" />
     <Compile Include="Common\CommonUtility.cs" />
@@ -152,11 +156,8 @@
     <Compile Include="DataModel\xxbt_yesno.cs">
       <DependentUpon>WristbandModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IWristbandBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

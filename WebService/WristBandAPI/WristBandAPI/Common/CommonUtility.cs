@@ -43,7 +43,7 @@ namespace WristBandAPI.Common
         }
 
         // Password is encrypted using this hash key
-        private static string passwordHash = "1Gth$5^&JdiopynvjgLL275Lbhdf^42d*23CFdfk5";
+        private static string passwordHash = "K@#f$5^&ashreU&@jGeQ275Lbhdf^42d*23CFdfk5";
         public static string PasswordHash
         {
             get
