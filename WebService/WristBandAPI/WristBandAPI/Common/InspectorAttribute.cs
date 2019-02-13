@@ -5,6 +5,7 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Linq;
 using NLog;
+using WristBandAPI.DataModel;
 
 namespace WristBandAPI.Common
 {
@@ -36,9 +37,9 @@ namespace WristBandAPI.Common
 
             Request req = (Request)inputs[0];
 
-            wristband_masterEntities context = new wristband_masterEntities();
+            WristbandEntities context = new WristbandEntities();
             logger.Info("Get Session object");
-            login_session session = context.login_session.Where(w => w.session_id == req.SessionId.ToString() && w.session_status_id == (short)ECSessionStatus.OPEN).FirstOrDefault();
+            login_session session = context.login_session.Where(w => w.session_id == req.SessionId.ToString() && w.status == (short)ECSessionStatus.OPEN).FirstOrDefault();
             if (session == null)
             {
                 logger.Info("-SESSION NOT FOUND-");
@@ -50,10 +51,7 @@ namespace WristBandAPI.Common
 
             if (session.user != null)
             {
-                StaticData.S_LogUser = session.user.email;
-            }
-            else {
-                StaticData.S_LogUser = session.sys_user.user_name;
+                StaticData.S_LogUser = session.user.username;
             }
 
             int sessionTimeout = 300;
@@ -61,7 +59,7 @@ namespace WristBandAPI.Common
             if (sessionTimeout == 0)
             {
                 logger.Info("Timeout : 0");
-                session.session_end_datetime = DateTime.Now;
+                session.end_datetime = DateTime.Now;
                 logger.Info("Changers save");
                 context.SaveChanges();
 
@@ -70,10 +68,10 @@ namespace WristBandAPI.Common
             }
             else
             {
-                if ((DateTime.Now - (DateTime)session.session_end_datetime).TotalMinutes <= sessionTimeout)
+                if ((DateTime.Now - (DateTime)session.end_datetime).TotalMinutes <= sessionTimeout)
                 {
                     logger.Info("Session set date information");
-                    session.session_end_datetime = DateTime.Now;
+                    session.end_datetime = DateTime.Now;
                     context.SaveChanges();
                     logger.Info("Save information : With timeout");
                     context.Dispose();
