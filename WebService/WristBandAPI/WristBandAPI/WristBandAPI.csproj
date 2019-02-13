@@ -62,6 +62,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -84,6 +85,16 @@
   <ItemGroup>
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
+    <Content Include="WristbandEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WristbandEntities.edmx</DependentUpon>
+      <LastGenOutput>WristbandEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WristbandEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WristbandEntities.edmx</DependentUpon>
+      <LastGenOutput>WristbandEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommonEnums.cs" />
@@ -93,11 +104,56 @@
     <Compile Include="Common\RequestDataContracts.cs" />
     <Compile Include="Common\ResponseDataContracts.cs" />
     <Compile Include="Common\StaticData.cs" />
+    <Compile Include="login_session.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sensor_data.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sensor_info.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WristbandEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WristbandEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WristbandEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WristbandEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WristbandEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="wristband_info.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xxbt_default.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xxbt_sensor_type.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xxbt_user_type.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xxbt_wb_status.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xxbt_yesno.cs">
+      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -116,6 +172,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <EntityDeploy Include="WristbandEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WristbandEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="WristbandEntities.edmx.diagram">
+      <DependentUpon>WristbandEntities.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

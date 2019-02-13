@@ -36,7 +36,7 @@ namespace WristBandAPI.Common
 
             Request req = (Request)inputs[0];
 
-            KuurakuEntities context = new KuurakuEntities();
+            wristband_masterEntities context = new wristband_masterEntities();
             logger.Info("Get Session object");
             login_session session = context.login_session.Where(w => w.session_id == req.SessionId.ToString() && w.session_status_id == (short)ECSessionStatus.OPEN).FirstOrDefault();
             if (session == null)
