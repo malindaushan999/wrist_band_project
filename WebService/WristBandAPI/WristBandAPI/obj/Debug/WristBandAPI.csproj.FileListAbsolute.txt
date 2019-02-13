@@ -1,0 +1,2 @@
+C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.csprojAssemblyReference.cache
+C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.csproj.CoreCompileInputs.cache
