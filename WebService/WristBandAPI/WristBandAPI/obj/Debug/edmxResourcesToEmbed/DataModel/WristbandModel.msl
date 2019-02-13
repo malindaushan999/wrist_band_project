@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WristbandModelStoreContainer" CdmEntityContainer="WristbandEntities">
+    <EntitySetMapping Name="login_session">
+      <EntityTypeMapping TypeName="WristbandModel.login_session">
+        <MappingFragment StoreEntitySet="login_session">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="end_datetime" ColumnName="end_datetime" />
+          <ScalarProperty Name="start_datetime" ColumnName="start_datetime" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sensor_data">
+      <EntityTypeMapping TypeName="WristbandModel.sensor_data">
+        <MappingFragment StoreEntitySet="sensor_data">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="sensor" ColumnName="sensor" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sensor_info">
+      <EntityTypeMapping TypeName="WristbandModel.sensor_info">
+        <MappingFragment StoreEntitySet="sensor_info">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_datetime" ColumnName="modified_datetime" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="added_datetime" ColumnName="added_datetime" />
+          <ScalarProperty Name="added_by" ColumnName="added_by" />
+          <ScalarProperty Name="sensor_type" ColumnName="sensor_type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="serial_no" ColumnName="serial_no" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="WristbandModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wristband_info">
+      <EntityTypeMapping TypeName="WristbandModel.wristband_info">
+        <MappingFragment StoreEntitySet="wristband_info">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="issued_datetime" ColumnName="issued_datetime" />
+          <ScalarProperty Name="issued_by" ColumnName="issued_by" />
+          <ScalarProperty Name="issued_to" ColumnName="issued_to" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_default">
+      <EntityTypeMapping TypeName="WristbandModel.xxbt_default">
+        <MappingFragment StoreEntitySet="xxbt_default">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_login_session_status">
+      <EntityTypeMapping TypeName="WristbandModel.xxbt_login_session_status">
+        <MappingFragment StoreEntitySet="xxbt_login_session_status">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_sensor_type">
+      <EntityTypeMapping TypeName="WristbandModel.xxbt_sensor_type">
+        <MappingFragment StoreEntitySet="xxbt_sensor_type">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_user_type">
+      <EntityTypeMapping TypeName="WristbandModel.xxbt_user_type">
+        <MappingFragment StoreEntitySet="xxbt_user_type">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_wb_status">
+      <EntityTypeMapping TypeName="WristbandModel.xxbt_wb_status">
+        <MappingFragment StoreEntitySet="xxbt_wb_status">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_yesno">
+      <EntityTypeMapping TypeName="WristbandModel.xxbt_yesno">
+        <MappingFragment StoreEntitySet="xxbt_yesno">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

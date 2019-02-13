@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using WristBandAPI.DataModel;
 
 namespace WristBandAPI.Common
 {
@@ -42,7 +43,7 @@ namespace WristBandAPI.Common
         }
 
         // Password is encrypted using this hash key
-        private static string passwordHash = "1Gth$5^&JdiopynvjgLL572Lbhdf^42d*32CFdfk5";
+        private static string passwordHash = "1Gth$5^&JdiopynvjgLL275Lbhdf^42d*23CFdfk5";
         public static string PasswordHash
         {
             get
@@ -57,26 +58,6 @@ namespace WristBandAPI.Common
                 lock (passwordHashLocker)
                 {
                     passwordHash = value;
-                }
-            }
-        }
-
-        // Email verification key is genarated using this string
-        private static string emailCharacterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-        public static string EmailCharacterSet
-        {
-            get
-            {
-                lock (emailCharacterSetLocker)
-                {
-                    return emailCharacterSet;
-                }
-            }
-            set
-            {
-                lock (emailCharacterSetLocker)
-                {
-                    emailCharacterSet = value;
                 }
             }
         }
@@ -160,38 +141,11 @@ namespace WristBandAPI.Common
             // Return decrypted string
             return Encoding.Unicode.GetString(ms.ToArray());
         }
-
-        /// <summary>
-        /// This function is use to genarate the email verification key
-        /// </summary>
-        /// <returns>Email verification key</returns>
-        public static string GetEmailVerificationKey()
-        {
-            // Responsible for create log details
-            Logger logger = LogManager.GetCurrentClassLogger();
-
-            try
-            // Try to genarate email verification key
-            {
-                // Default size of the verification key is 6 chars
-                Random random = new Random();
-                return new string(Enumerable.Repeat(EmailCharacterSet, 6).Select(s => s[random.Next(s.Length)]).ToArray());
-            }
-            catch (Exception ex)
-            // Exception is occured
-            {
-                logger.Trace(ex.InnerException);
-                logger.Trace(ex.StackTrace);
-                logger.Trace(ex.Message);
-                return null;
-            }
-        }
-
+		
         public static Guid getGUID()
         {
             Guid guid = Guid.NewGuid();
             return guid;
-
         }
 
         public static void writeErrorLog(string funcName, CSResponse res, Exception ex, Logger logger)
@@ -230,27 +184,15 @@ namespace WristBandAPI.Common
             }
         }
 
-        //public static user GetUserInfoBySessionId(string sessionId, KuurakuEntities context)
-        //{
-        //    login_session logInfo = context.login_session.Where(w => w.session_id == sessionId && w.session_status_id == (short)ECSessionStatus.OPEN).FirstOrDefault();
-        //    if (logInfo != null)
-        //    {
-        //        if (logInfo.user_type_id == (short)EBUserType.USER)
-        //        {
-        //            return logInfo.user;
-        //        }
-        //        else if (logInfo.user_type_id == (short)EBUserType.SYS_USER)
-        //        {
-        //            user sysUserInfo = new user();
-        //            sysUserInfo.email = logInfo.sys_user.user_name;
-        //            sysUserInfo.user_id = logInfo.sys_user_id.Value;
-        //            sysUserInfo.user_type = (short)EBUserType.SYS_USER;
-        //            return sysUserInfo;
-        //        }
-        //    }
-
-        //    return null;
-        //}
-    }
+		public static user GetUserInfoBySessionId(string sessionId, WristbandEntities context)
+		{
+			login_session logInfo = context.login_session.Where(w => w.session_id == sessionId && w.status == (short)ECSessionStatus.OPEN).FirstOrDefault();
+			if (logInfo != null)
+			{
+				return logInfo.user;
+			}
+			return null;
+		}
+	}
 
 }

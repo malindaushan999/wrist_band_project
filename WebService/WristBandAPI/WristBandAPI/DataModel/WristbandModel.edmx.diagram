@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c249b4929404191831f4d39c8f54fc5" Name="Diagram1">
+        <EntityTypeShape EntityType="WristbandModel.login_session" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="WristbandModel.sensor_data" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="WristbandModel.sensor_info" Width="1.5" PointX="6" PointY="7.75" />
+        <EntityTypeShape EntityType="WristbandModel.user" Width="1.5" PointX="3" PointY="12.375" />
+        <EntityTypeShape EntityType="WristbandModel.wristband_info" Width="1.5" PointX="5.25" PointY="12.875" />
+        <EntityTypeShape EntityType="WristbandModel.xxbt_default" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="WristbandModel.xxbt_login_session_status" Width="1.5" PointX="0.75" PointY="3.625" />
+        <EntityTypeShape EntityType="WristbandModel.xxbt_sensor_type" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WristbandModel.xxbt_user_type" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="WristbandModel.xxbt_wb_status" Width="1.5" PointX="3" PointY="17.75" />
+        <EntityTypeShape EntityType="WristbandModel.xxbt_yesno" Width="1.5" PointX="0.75" PointY="8.375" />
+        <AssociationConnector Association="WristbandModel.fk_login_session_is_delete_xxbt_yesno_id" />
+        <AssociationConnector Association="WristbandModel.fk_login_session_status_xxbt_login_session_status_id" />
+        <AssociationConnector Association="WristbandModel.fk_login_session_user_id_user_id" />
+        <AssociationConnector Association="WristbandModel.fk_sensor_data_is_delete_xxbt_yesno_id" />
+        <AssociationConnector Association="WristbandModel.fk_sensor_data_sensor_sensor_info_id" />
+        <AssociationConnector Association="WristbandModel.fk_sensor_info_is_delete_xxt_yes_no_id" />
+        <AssociationConnector Association="WristbandModel.fk_sensor_info_sensor_type_xxbt_sensor_type_id" />
+        <AssociationConnector Association="WristbandModel.fk_user_is_delete_xxbt_is_delete_id" />
+        <AssociationConnector Association="WristbandModel.fk_user_user_type_xxt_user_type_id" />
+        <AssociationConnector Association="WristbandModel.fk_wristband_info_issued_by_user_id" />
+        <AssociationConnector Association="WristbandModel.fk_wristband_info_issued_to_user_id" />
+        <AssociationConnector Association="WristbandModel.fk_wristband_info_is_delete_xxbt_yesno_id" />
+        <AssociationConnector Association="WristbandModel.fk_wristband_info_status_xxbt_wb_status_id" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

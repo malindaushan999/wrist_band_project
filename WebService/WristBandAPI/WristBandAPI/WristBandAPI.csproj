@@ -83,18 +83,18 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataModel\WristbandModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WristbandModel.edmx</DependentUpon>
+      <LastGenOutput>WristbandModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModel\WristbandModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WristbandModel.edmx</DependentUpon>
+      <LastGenOutput>WristbandModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
-    <Content Include="WristbandEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WristbandEntities.edmx</DependentUpon>
-      <LastGenOutput>WristbandEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="WristbandEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WristbandEntities.edmx</DependentUpon>
-      <LastGenOutput>WristbandEntities.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommonEnums.cs" />
@@ -104,56 +104,59 @@
     <Compile Include="Common\RequestDataContracts.cs" />
     <Compile Include="Common\ResponseDataContracts.cs" />
     <Compile Include="Common\StaticData.cs" />
-    <Compile Include="login_session.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    <Compile Include="DataModel\login_session.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sensor_data.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    <Compile Include="DataModel\sensor_data.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sensor_info.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
+    <Compile Include="DataModel\sensor_info.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\user.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WristbandModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WristbandModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WristbandModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WristbandModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WristbandModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\wristband_info.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\xxbt_default.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\xxbt_login_session_status.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\xxbt_sensor_type.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\xxbt_user_type.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\xxbt_wb_status.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\xxbt_yesno.cs">
+      <DependentUpon>WristbandModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WristbandEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WristbandEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WristbandEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WristbandEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WristbandEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="wristband_info.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xxbt_default.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xxbt_sensor_type.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xxbt_user_type.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xxbt_wb_status.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xxbt_yesno.cs">
-      <DependentUpon>WristbandEntities.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -161,6 +164,13 @@
   <ItemGroup>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="DataModel\WristbandModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WristbandModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataModel\WristbandModel.edmx.diagram">
+      <DependentUpon>WristbandModel.edmx</DependentUpon>
     </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -172,13 +182,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <EntityDeploy Include="WristbandEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WristbandEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="WristbandEntities.edmx.diagram">
-      <DependentUpon>WristbandEntities.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
