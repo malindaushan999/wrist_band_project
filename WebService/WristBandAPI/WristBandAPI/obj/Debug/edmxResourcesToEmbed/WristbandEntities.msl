@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="wristband_masterModelStoreContainer" CdmEntityContainer="wristband_masterEntities">
+    <EntitySetMapping Name="login_session">
+      <EntityTypeMapping TypeName="wristband_masterModel.login_session">
+        <MappingFragment StoreEntitySet="login_session">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="start_datetime" ColumnName="start_datetime" />
+          <ScalarProperty Name="end_datetime" ColumnName="end_datetime" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sensor_data">
+      <EntityTypeMapping TypeName="wristband_masterModel.sensor_data">
+        <MappingFragment StoreEntitySet="sensor_data">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sensor" ColumnName="sensor" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sensor_info">
+      <EntityTypeMapping TypeName="wristband_masterModel.sensor_info">
+        <MappingFragment StoreEntitySet="sensor_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="serial_no" ColumnName="serial_no" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="sensor_type" ColumnName="sensor_type" />
+          <ScalarProperty Name="added_by" ColumnName="added_by" />
+          <ScalarProperty Name="added_datetime" ColumnName="added_datetime" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_datetime" ColumnName="modified_datetime" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="wristband_masterModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wristband_info">
+      <EntityTypeMapping TypeName="wristband_masterModel.wristband_info">
+        <MappingFragment StoreEntitySet="wristband_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="issued_to" ColumnName="issued_to" />
+          <ScalarProperty Name="issued_by" ColumnName="issued_by" />
+          <ScalarProperty Name="issued_datetime" ColumnName="issued_datetime" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_default">
+      <EntityTypeMapping TypeName="wristband_masterModel.xxbt_default">
+        <MappingFragment StoreEntitySet="xxbt_default">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_sensor_type">
+      <EntityTypeMapping TypeName="wristband_masterModel.xxbt_sensor_type">
+        <MappingFragment StoreEntitySet="xxbt_sensor_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_user_type">
+      <EntityTypeMapping TypeName="wristband_masterModel.xxbt_user_type">
+        <MappingFragment StoreEntitySet="xxbt_user_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_wb_status">
+      <EntityTypeMapping TypeName="wristband_masterModel.xxbt_wb_status">
+        <MappingFragment StoreEntitySet="xxbt_wb_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xxbt_yesno">
+      <EntityTypeMapping TypeName="wristband_masterModel.xxbt_yesno">
+        <MappingFragment StoreEntitySet="xxbt_yesno">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

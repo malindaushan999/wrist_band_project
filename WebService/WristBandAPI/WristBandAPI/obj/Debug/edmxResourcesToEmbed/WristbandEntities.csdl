@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="wristband_masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="login_session">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="session_id" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="start_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="end_datetime" Type="DateTime" />
+    <Property Name="is_delete" Type="Int16" />
+    <NavigationProperty Name="xxbt_yesno" Relationship="Self.fk_login_session_is_delete_xxbt_yesno_id" FromRole="login_session" ToRole="xxbt_yesno" />
+    <NavigationProperty Name="user" Relationship="Self.fk_login_session_user_id_user_id" FromRole="login_session" ToRole="user" />
+  </EntityType>
+  <EntityType Name="sensor_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sensor" Type="Int64" />
+    <Property Name="data" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="timestamp" Type="DateTime" />
+    <Property Name="is_delete" Type="Int16" />
+    <NavigationProperty Name="xxbt_yesno" Relationship="Self.fk_sensor_data_is_delete_xxbt_yesno_id" FromRole="sensor_data" ToRole="xxbt_yesno" />
+    <NavigationProperty Name="sensor_info" Relationship="Self.fk_sensor_data_sensor_sensor_info_id" FromRole="sensor_data" ToRole="sensor_info" />
+  </EntityType>
+  <EntityType Name="sensor_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="serial_no" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="sensor_type" Type="Int16" />
+    <Property Name="added_by" Type="Int64" />
+    <Property Name="added_datetime" Type="DateTime" />
+    <Property Name="modified_by" Type="Int64" />
+    <Property Name="modified_datetime" Type="DateTime" />
+    <Property Name="is_delete" Type="Int16" />
+    <NavigationProperty Name="sensor_data" Relationship="Self.fk_sensor_data_sensor_sensor_info_id" FromRole="sensor_info" ToRole="sensor_data" />
+    <NavigationProperty Name="xxbt_yesno" Relationship="Self.fk_sensor_info_is_delete_xxt_yes_no_id" FromRole="sensor_info" ToRole="xxbt_yesno" />
+    <NavigationProperty Name="xxbt_sensor_type" Relationship="Self.fk_sensor_info_sensor_type_xxbt_sensor_type_id" FromRole="sensor_info" ToRole="xxbt_sensor_type" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="Int32" />
+    <Property Name="mobile" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="user_type" Type="Int16" />
+    <Property Name="image_path" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Int16" />
+    <NavigationProperty Name="login_session" Relationship="Self.fk_login_session_user_id_user_id" FromRole="user" ToRole="login_session" />
+    <NavigationProperty Name="xxbt_yesno" Relationship="Self.fk_user_is_delete_xxbt_is_delete_id" FromRole="user" ToRole="xxbt_yesno" />
+    <NavigationProperty Name="xxbt_user_type" Relationship="Self.fk_user_user_type_xxt_user_type_id" FromRole="user" ToRole="xxbt_user_type" />
+    <NavigationProperty Name="wristband_info" Relationship="Self.fk_wristband_info_issued_by_user_id" FromRole="user" ToRole="wristband_info" />
+    <NavigationProperty Name="wristband_info1" Relationship="Self.fk_wristband_info_issued_to_user_id" FromRole="user" ToRole="wristband_info" />
+  </EntityType>
+  <EntityType Name="wristband_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="issued_to" Type="Int64" />
+    <Property Name="issued_by" Type="Int64" />
+    <Property Name="issued_datetime" Type="DateTime" />
+    <Property Name="is_delete" Type="Int16" />
+    <NavigationProperty Name="user" Relationship="Self.fk_wristband_info_issued_by_user_id" FromRole="wristband_info" ToRole="user" />
+    <NavigationProperty Name="user1" Relationship="Self.fk_wristband_info_issued_to_user_id" FromRole="wristband_info" ToRole="user" />
+    <NavigationProperty Name="xxbt_yesno" Relationship="Self.fk_wristband_info_is_delete_xxbt_yesno_id" FromRole="wristband_info" ToRole="xxbt_yesno" />
+    <NavigationProperty Name="xxbt_wb_status" Relationship="Self.fk_wristband_info_status_xxbt_wb_status_id" FromRole="wristband_info" ToRole="xxbt_wb_status" />
+  </EntityType>
+  <EntityType Name="xxbt_default">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="xxbt_sensor_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sensor_info" Relationship="Self.fk_sensor_info_sensor_type_xxbt_sensor_type_id" FromRole="xxbt_sensor_type" ToRole="sensor_info" />
+  </EntityType>
+  <EntityType Name="xxbt_user_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="Self.fk_user_user_type_xxt_user_type_id" FromRole="xxbt_user_type" ToRole="user" />
+  </EntityType>
+  <EntityType Name="xxbt_wb_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="wristband_info" Relationship="Self.fk_wristband_info_status_xxbt_wb_status_id" FromRole="xxbt_wb_status" ToRole="wristband_info" />
+  </EntityType>
+  <EntityType Name="xxbt_yesno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="login_session" Relationship="Self.fk_login_session_is_delete_xxbt_yesno_id" FromRole="xxbt_yesno" ToRole="login_session" />
+    <NavigationProperty Name="sensor_data" Relationship="Self.fk_sensor_data_is_delete_xxbt_yesno_id" FromRole="xxbt_yesno" ToRole="sensor_data" />
+    <NavigationProperty Name="sensor_info" Relationship="Self.fk_sensor_info_is_delete_xxt_yes_no_id" FromRole="xxbt_yesno" ToRole="sensor_info" />
+    <NavigationProperty Name="users" Relationship="Self.fk_user_is_delete_xxbt_is_delete_id" FromRole="xxbt_yesno" ToRole="user" />
+    <NavigationProperty Name="wristband_info" Relationship="Self.fk_wristband_info_is_delete_xxbt_yesno_id" FromRole="xxbt_yesno" ToRole="wristband_info" />
+  </EntityType>
+  <Association Name="fk_login_session_is_delete_xxbt_yesno_id">
+    <End Role="xxbt_yesno" Type="Self.xxbt_yesno" Multiplicity="0..1" />
+    <End Role="login_session" Type="Self.login_session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_yesno">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="login_session">
+        <PropertyRef Name="is_delete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_login_session_user_id_user_id">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="login_session" Type="Self.login_session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="login_session">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sensor_data_is_delete_xxbt_yesno_id">
+    <End Role="xxbt_yesno" Type="Self.xxbt_yesno" Multiplicity="0..1" />
+    <End Role="sensor_data" Type="Self.sensor_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_yesno">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sensor_data">
+        <PropertyRef Name="is_delete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sensor_data_sensor_sensor_info_id">
+    <End Role="sensor_info" Type="Self.sensor_info" Multiplicity="0..1" />
+    <End Role="sensor_data" Type="Self.sensor_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sensor_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sensor_data">
+        <PropertyRef Name="sensor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sensor_info_is_delete_xxt_yes_no_id">
+    <End Role="xxbt_yesno" Type="Self.xxbt_yesno" Multiplicity="0..1" />
+    <End Role="sensor_info" Type="Self.sensor_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_yesno">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sensor_info">
+        <PropertyRef Name="is_delete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sensor_info_sensor_type_xxbt_sensor_type_id">
+    <End Role="xxbt_sensor_type" Type="Self.xxbt_sensor_type" Multiplicity="0..1" />
+    <End Role="sensor_info" Type="Self.sensor_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_sensor_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sensor_info">
+        <PropertyRef Name="sensor_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_user_is_delete_xxbt_is_delete_id">
+    <End Role="xxbt_yesno" Type="Self.xxbt_yesno" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_yesno">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="is_delete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_user_user_type_xxt_user_type_id">
+    <End Role="xxbt_user_type" Type="Self.xxbt_user_type" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_user_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="user_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_wristband_info_issued_by_user_id">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="wristband_info" Type="Self.wristband_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wristband_info">
+        <PropertyRef Name="issued_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_wristband_info_issued_to_user_id">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="wristband_info" Type="Self.wristband_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wristband_info">
+        <PropertyRef Name="issued_to" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_wristband_info_is_delete_xxbt_yesno_id">
+    <End Role="xxbt_yesno" Type="Self.xxbt_yesno" Multiplicity="0..1" />
+    <End Role="wristband_info" Type="Self.wristband_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_yesno">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wristband_info">
+        <PropertyRef Name="is_delete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_wristband_info_status_xxbt_wb_status_id">
+    <End Role="xxbt_wb_status" Type="Self.xxbt_wb_status" Multiplicity="0..1" />
+    <End Role="wristband_info" Type="Self.wristband_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xxbt_wb_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wristband_info">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="wristband_masterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="login_session" EntityType="Self.login_session" />
+    <EntitySet Name="sensor_data" EntityType="Self.sensor_data" />
+    <EntitySet Name="sensor_info" EntityType="Self.sensor_info" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="wristband_info" EntityType="Self.wristband_info" />
+    <EntitySet Name="xxbt_default" EntityType="Self.xxbt_default" />
+    <EntitySet Name="xxbt_sensor_type" EntityType="Self.xxbt_sensor_type" />
+    <EntitySet Name="xxbt_user_type" EntityType="Self.xxbt_user_type" />
+    <EntitySet Name="xxbt_wb_status" EntityType="Self.xxbt_wb_status" />
+    <EntitySet Name="xxbt_yesno" EntityType="Self.xxbt_yesno" />
+    <AssociationSet Name="fk_login_session_is_delete_xxbt_yesno_id" Association="Self.fk_login_session_is_delete_xxbt_yesno_id">
+      <End Role="xxbt_yesno" EntitySet="xxbt_yesno" />
+      <End Role="login_session" EntitySet="login_session" />
+    </AssociationSet>
+    <AssociationSet Name="fk_login_session_user_id_user_id" Association="Self.fk_login_session_user_id_user_id">
+      <End Role="user" EntitySet="users" />
+      <End Role="login_session" EntitySet="login_session" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sensor_data_is_delete_xxbt_yesno_id" Association="Self.fk_sensor_data_is_delete_xxbt_yesno_id">
+      <End Role="xxbt_yesno" EntitySet="xxbt_yesno" />
+      <End Role="sensor_data" EntitySet="sensor_data" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sensor_data_sensor_sensor_info_id" Association="Self.fk_sensor_data_sensor_sensor_info_id">
+      <End Role="sensor_info" EntitySet="sensor_info" />
+      <End Role="sensor_data" EntitySet="sensor_data" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sensor_info_is_delete_xxt_yes_no_id" Association="Self.fk_sensor_info_is_delete_xxt_yes_no_id">
+      <End Role="xxbt_yesno" EntitySet="xxbt_yesno" />
+      <End Role="sensor_info" EntitySet="sensor_info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sensor_info_sensor_type_xxbt_sensor_type_id" Association="Self.fk_sensor_info_sensor_type_xxbt_sensor_type_id">
+      <End Role="xxbt_sensor_type" EntitySet="xxbt_sensor_type" />
+      <End Role="sensor_info" EntitySet="sensor_info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_user_is_delete_xxbt_is_delete_id" Association="Self.fk_user_is_delete_xxbt_is_delete_id">
+      <End Role="xxbt_yesno" EntitySet="xxbt_yesno" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="fk_user_user_type_xxt_user_type_id" Association="Self.fk_user_user_type_xxt_user_type_id">
+      <End Role="xxbt_user_type" EntitySet="xxbt_user_type" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="fk_wristband_info_issued_by_user_id" Association="Self.fk_wristband_info_issued_by_user_id">
+      <End Role="user" EntitySet="users" />
+      <End Role="wristband_info" EntitySet="wristband_info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_wristband_info_issued_to_user_id" Association="Self.fk_wristband_info_issued_to_user_id">
+      <End Role="user" EntitySet="users" />
+      <End Role="wristband_info" EntitySet="wristband_info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_wristband_info_is_delete_xxbt_yesno_id" Association="Self.fk_wristband_info_is_delete_xxbt_yesno_id">
+      <End Role="xxbt_yesno" EntitySet="xxbt_yesno" />
+      <End Role="wristband_info" EntitySet="wristband_info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_wristband_info_status_xxbt_wb_status_id" Association="Self.fk_wristband_info_status_xxbt_wb_status_id">
+      <End Role="xxbt_wb_status" EntitySet="xxbt_wb_status" />
+      <End Role="wristband_info" EntitySet="wristband_info" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
