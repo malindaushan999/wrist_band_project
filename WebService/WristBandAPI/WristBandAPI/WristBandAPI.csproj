@@ -93,6 +93,7 @@
       <DependentUpon>WristbandModel.edmx</DependentUpon>
       <LastGenOutput>WristbandModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Services\WristbandSensor.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +158,15 @@
       <DependentUpon>WristbandModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IWristbandBase.cs" />
+    <Compile Include="Sensor\SensorCommonDataContracts.cs" />
+    <Compile Include="Sensor\SensorEnums.cs" />
+    <Compile Include="Sensor\SensorErrors.cs" />
+    <Compile Include="Sensor\SensorRequestDataContracts.cs" />
+    <Compile Include="Sensor\SensorResponseDataContracts.cs" />
+    <Compile Include="Services\IWristbandSensor.cs" />
+    <Compile Include="Services\WristbandSensor.svc.cs">
+      <DependentUpon>WristbandSensor.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
