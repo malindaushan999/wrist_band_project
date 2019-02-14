@@ -8,7 +8,7 @@ namespace WristBandAPI.Common
     /**
      * 1    -  999 Common 
      * 1001 - 1999 Base
-     * 2001 - 2999 
+     * 2001 - 2999 Sensor
      * 3001 - 3999 
      */
 

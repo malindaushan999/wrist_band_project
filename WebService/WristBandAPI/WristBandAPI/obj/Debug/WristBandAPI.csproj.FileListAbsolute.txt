@@ -1,4 +1,3 @@
-C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.csproj.CoreCompileInputs.cache
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\NLog.config
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\WristBandAPI.dll.config
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\WristBandAPI.dll
@@ -14,6 +13,7 @@ C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\EntityFr
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\Newtonsoft.Json.pdb
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\Newtonsoft.Json.xml
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\bin\NLog.xml
+C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.csproj.CoreCompileInputs.cache
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.csproj.CopyComplete
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.dll
 C:\Users\USHI\Documents\GIT\WB\WebService\WristBandAPI\WristBandAPI\obj\Debug\WristBandAPI.pdb
