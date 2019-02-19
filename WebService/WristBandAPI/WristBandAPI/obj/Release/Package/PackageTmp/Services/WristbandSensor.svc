@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WristBandAPI.Services.WristbandSensor" CodeBehind="WristbandSensor.svc.cs" %>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WristBandAPI.Sensor" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WristBandAPI.Sensor" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WristBandAPI.Common" />
+  <xs:complexType name="UploadSensorDataRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/WristBandAPI.Common" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SensorId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UploadSensorDataRequest" nillable="true" type="tns:UploadSensorDataRequest" />
+  <xs:complexType name="UploadSensorDataResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/WristBandAPI.Common" base="q2:CSResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UploadSensorDataResponse" nillable="true" type="tns:UploadSensorDataResponse" />
+</xs:schema>

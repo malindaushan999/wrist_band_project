@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="506de84b-ef55-4930-9705-b691fd0d8b68" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WristbandSensor.xsd" MetadataType="Schema" ID="6d46ab94-f43f-4ed1-849f-0687eb7eeb9f" SourceId="1" SourceUrl="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?xsd=xsd0" />
+    <MetadataFile FileName="WristbandSensor1.xsd" MetadataType="Schema" ID="862e8bba-246a-4d0e-9a32-389c3efbf11d" SourceId="1" SourceUrl="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?xsd=xsd3" />
+    <MetadataFile FileName="WristbandSensor.wsdl" MetadataType="Wsdl" ID="93a6b668-d7fd-4171-8399-f0bb149df4b1" SourceId="1" SourceUrl="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?wsdl" />
+    <MetadataFile FileName="WristbandSensor.disco" MetadataType="Disco" ID="9164f0d0-dcc4-4145-b6b5-46c979d7417a" SourceId="1" SourceUrl="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?disco" />
+    <MetadataFile FileName="WristbandSensor2.xsd" MetadataType="Schema" ID="8b9dda04-21a7-43de-b569-173fa410fd68" SourceId="1" SourceUrl="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?xsd=xsd2" />
+    <MetadataFile FileName="WristbandSensor3.xsd" MetadataType="Schema" ID="6dc1e46e-27ca-415b-9c22-681cae05df70" SourceId="1" SourceUrl="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

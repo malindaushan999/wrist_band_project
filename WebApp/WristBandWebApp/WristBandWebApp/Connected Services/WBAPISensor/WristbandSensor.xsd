@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/WrsitBandAPI/Services/WristbandSensor.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WristBandAPI.Sensor" />
+  <xs:element name="UploadSensorData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WristBandAPI.Sensor" minOccurs="0" name="req" nillable="true" type="q1:UploadSensorDataRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadSensorDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WristBandAPI.Sensor" minOccurs="0" name="UploadSensorDataResult" nillable="true" type="q2:UploadSensorDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
