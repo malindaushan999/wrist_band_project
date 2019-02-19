@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="WristbandEntities-Web.config Connection String" description="WristbandEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/DataModel.WristbandModel.csdl|res://*/DataModel.WristbandModel.ssdl|res://*/DataModel.WristbandModel.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=localhost;user id=wb_admin;password=wbadmin;persistsecurityinfo=True;database=wristband_master&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\USHI\\Documents\\GIT\\WB\\WebService\\WristBandAPI\\WristBandAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WristbandEntities']/@connectionString" />
+  </parameter>
+</parameters>
